@@ -6,6 +6,7 @@ import "./App.css";
 import LandingPage from "./pages/LandingPage";
 import AddContact from "./controllers/AddContact";
 import ContactDetails from "./controllers/ContactDetails";
+import EditContactDetails from "./controllers/EditContactDetails"; // Importe o componente EditContactDetails
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/" element={<LandingPage />} />
           <Route path="/add" element={<AddContact />} />
           <Route path="/contacts/:id" element={<ContactDetails />} />
+          <Route path="/contacts/:id/edit" element={<EditContactDetails />} />
         </Routes>
       </div>
     </Router>

@@ -35,14 +35,28 @@ function ContactDetails() {
   return (
     <div>
       <h1>Contact Details</h1>
-      <div className="contact-card">
-        <img src={contact.photo} alt={contact.name} />
-        <h2>{contact.name}</h2>
-        <p>Contato: {contact.phone}</p>
-        <p>
-          Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
-        </p>
-        <Link to="/contacts">Back to Contacts</Link>
+      <div className="contact-detail">
+        <div className="contact-details-left">
+          <img src={contact.photo} alt={contact.name} />
+        </div>
+        <div className="contact-details-rigth">
+          <h2>{contact.name}</h2>
+          <p>Contato: {contact.phone}</p>
+          <p>
+            Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          </p>
+          <div className="contact-details-btns">
+            <Link to="/" className="btn-back">
+              <b> Back to Contacts</b>
+            </Link>
+            <Link to={`/contacts/${contact.id}/dell`} className="btn-dell">
+              <b> Deletar</b>
+            </Link>
+            <Link to={`/contacts/${contact.id}/edit`} className="btn-edit">
+              <b> editar</b>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
